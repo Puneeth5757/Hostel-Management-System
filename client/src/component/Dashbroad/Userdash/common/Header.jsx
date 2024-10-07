@@ -21,32 +21,32 @@ const Header = () => {
     setAnchorEl(null);
   };
 
-  const logoutuser = async () => {
-    let token = localStorage.getItem("usersdatatoken");
-    // console.log(token)
+    const logoutuser = async () => {
+      let token = localStorage.getItem("usersdatatoken");
+      // console.log(token)
 
-    const res = await fetch("http://localhost:3000/api/user/logout", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token,
-        Accept: "application/json",
-      },
-      credentials: "include",
-    });
+      const res = await fetch("http://localhost:3000/api/user/logout", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+          Accept: "application/json",
+        },
+        credentials: "include",
+      });
 
-    const data = await res.json();
-    // console.log(data);
+      const data = await res.json();
+      // console.log(data);
 
-    if (data.status == 201) {
-      console.log("user logout");
-      localStorage.removeItem("usersdatatoken");
-      setLoginData(false);
-      history("/");
-    } else {
-      console.log(" error");
-    }
-  };
+      if (data.status == 201) {
+        console.log("user logout");
+        localStorage.removeItem("usersdatatoken");
+        setLoginData(false);
+        history("/");
+      } else {
+        console.log(" error");
+      }
+    };
 
   const goDash = () => {
     history("/dashbroad");

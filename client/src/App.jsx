@@ -15,7 +15,7 @@ import Suggestions from "./component/Dashbroad/Userdash/Suggestions";
 import Invoices from "./component/Dashbroad/Userdash/Invoices";
 
 import AdminDash from "./component/Dashbroad/Admindash/Dashbroad";
-import AdminHome from "./component/Dashbroad/Admindash/Home";
+// import AdminHome from "./component/Dashbroad/Admindash/Home";
 import AdminMess from "./component/Dashbroad/Admindash/Mess";
 import AdminAttendance from "./component/Dashbroad/Admindash/Attendance";
 import AdminComplaints from "./component/Dashbroad/Admindash/Complaints";
@@ -39,7 +39,6 @@ function App() {
       </Route>
 
       <Route path="admin-dash" element={<AdminDash />}>
-        <Route index element={<AdminHome />} />
         <Route path="Admin-mess" element={<AdminMess />} />
         <Route path="Admin-attendance" element={<AdminAttendance />} />
         <Route path="Admin-complaints" element={<AdminComplaints />} />
